@@ -8,7 +8,7 @@ function get_query_res(table, token, callback) {
     var connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: 'zhn90507',
+        password: '*******',
         database: table
     });
 
