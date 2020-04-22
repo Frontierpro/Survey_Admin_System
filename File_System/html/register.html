@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>调查问卷管理系统 | 注册</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+<link rel="icon" type="image/x-icon" href="icon.png" />
+<link rel="stylesheet" href="register.css" />
+
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="register.js"></script>
+
+</head>
+
+
+<body>
+
+<div id="page">
+
+<table width="100%" height="100%">
+    <tr colspan="3" height="10%" id="top"></tr>
+
+    <tr height="80%" id="center">
+        <td width="10%" id="left"></td>
+        <td width="80%" id="container">
+        <div id="content">
+            <h1 id="content-header">用户注册</h1>
+
+            <span class="input-container" id="email-container">
+            <input type="email" class="input-content" id="email-input" placeholder="用邮箱注册用户名" />
+            </span>
+            <p class="input-error" id="email-format-error"></p>
+
+            <span class="input-container" id="pwd-container">
+            <input type="password" class="input-content" id="pwd-input" placeholder="为该账户设置密码" />
+            <img src="hidden.png" class="hidden-icon" id="pwd-hidden" />
+            </span>
+            <p class="input-error" id="pwd-format-error"></p>
+            
+            <span class="input-container" id="confirm-container">
+            <input type="password" class="input-content" id="pwd-repeat" placeholder="再次输入确认密码" />
+            <img src="hidden.png" class="hidden-icon" id="confirm-hidden" />
+            </span>
+            <p class="input-error" id="pwd-confirm-error"></p>
+
+            <input type="submit" id="content-button" value="创建用户" />
+
+            <a href="index.html" class="page-link" id="link-left"><b>返回主页</b></a>
+            <a href="login.html" class="page-link" id="link-right"><b>已有账号，立即登录</b></a>
+        </div>
+        </td>
+        <td width="10%" id="right"></td>
+    </tr>
+    
+    <tr colspan="3" height="10%" id="down"></tr>
+</table>
+
+</div>
+
+</body>
+
+</html>
