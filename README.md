@@ -2,4 +2,7 @@
 
 > website building ...
 
-```only register page is working```
+```
+User info admin system complete!
+【Register page and login page are working】
+```
