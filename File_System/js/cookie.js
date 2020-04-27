@@ -1,0 +1,27 @@
+function set_cookie(cookieName, cookieValue, expireDuration, cookiePath) {
+    var date = new Date();
+    date.setTime(date.getTime() + (expireDuration * 24 * 60 * 60 * 1000));
+    var expire_cookie = "expires="+ date.toGMTString();
+    if (cookiePath) {
+        var path_cookie = "path=" + cookiePath;
+        document.cookie = cookieName + "=" + cookieValue + "; " + expire_cookie + "; " + path_cookie + ";";
+    }
+    else
+        document.cookie = cookieName + "=" + cookieValue + "; " + expire_cookie + ";";
+}
+
+function get_cookie(cookieName) {
+    cookieName = cookieName + "=";
+    var cookieList = document.cookie.split(';');
+    for(var cnt = 0; cnt < cookieList.length; cnt++) {
+        var cookieItem = cookieList[cnt].trim();
+        if (cookieItem.indexOf(cookieName) == 0) {
+            return cookieItem.substring(cookieName.length, cookieItem.length);
+        }
+    }
+    return undefined;
+}
+
+function clear_cookie(cookieName, cookiePath) {
+    set_cookie(cookieName, "", 0, cookiePath);
+}
