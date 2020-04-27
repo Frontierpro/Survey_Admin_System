@@ -1,6 +1,6 @@
 var mysql = require('mysql');
 
-function get_query_res(table, token, callback) {
+function get_query_res(base, token, callback) {
     console.log("--sql query--");
     console.log(token);
     console.log("Querying...");
@@ -8,8 +8,8 @@ function get_query_res(table, token, callback) {
     var connection = mysql.createConnection({
         host: 'localhost',
         user: 'root',
-        password: '*******',
-        database: table
+        password: 'zhn90507',
+        database: base
     });
 
     connection.connect();
