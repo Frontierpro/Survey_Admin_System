@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title>调查问卷管理系统 | 登录</title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+<link rel="icon" type="image/x-icon" href="icon.png" />
+<link rel="stylesheet" href="entrance.css" />
+
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="entrance.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+
+</head>
+
+<body>
+
+<div class="page">
+
+<table width="100%" height="100%">
+    <tr colspan="3" height="10%" class="top"></tr>
+
+    <tr height="80%" class="center">
+        <td width="10%" class="left"></td>
+        <td width="80%" class="container">
+        <div class="content">
+            <h1 class="content-header">用户登录</h1>
+
+            <span class="input-container" id="email-container">
+            <input type="email" class="input-content" id="login-email" placeholder="输入登录邮箱" />
+            </span>
+            <p class="input-error" id="login-email-error"></p>
+
+            <span class="input-container" id="pwd-container">
+            <input type="password" class="input-content" id="login-pwd" placeholder="输入账户密码" />
+            <img src="hidden.png" class="hidden-icon" id="login-pwd-hidden" />
+            </span>
+            <p class="input-error" id="login-pwd-error"></p>
+            
+            <div class="verify-container">
+            <div class="verify-button"><b>>>></b></div>
+            <b><p class="verify-text">拖动滑块验证</p></b>
+            <div class="verify-bkg"></div>
+            </div>
+            <p class="input-error" id="verify-error"></p>
+
+            <input type="submit" class="content-button" id="login-submit" value="点击登录" />
+
+            <a href="index.html" class="page-link" id="link-left"><b>返回主页</b></a>
+            <a href="register.html" class="page-link" id="link-right"><b>没有账号，前往注册</b></a>
+        </div>
+        </td>
+        <td width="10%" class="right"></td>
+    </tr>
+    
+    <tr colspan="3" height="10%" class="bottom"></tr>
+</table>
+
+</div>
+
+</body>
+
+</html>
 
