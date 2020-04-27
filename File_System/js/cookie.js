@@ -25,3 +25,12 @@ function get_cookie(cookieName) {
 function clear_cookie(cookieName, cookiePath) {
     set_cookie(cookieName, "", 0, cookiePath);
 }
+
+$(document).ready(function() {
+    if (get_cookie("user_name") != undefined)
+        setInterval("renew_cookie()", 600000);
+})
+
+function renew_cookie() {
+    set_cookie("user_name", get_cookie("user_name"), 3, "/");
+}
