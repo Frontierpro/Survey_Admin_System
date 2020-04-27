@@ -3,11 +3,11 @@ var sql = require("../Data_Layer/sql");
 
 function get_response(email, pwd, res) {
     var email_unique_check = function(callback) {
-        var table = "survey_admin_system";
+        var base = "survey_admin_system";
         var token = "select count(*) as num from user_info where id = '" + email + "'";
         var resLength = 0;
 
-        sql.get_query_res(table, token, function(queryRes) {
+        sql.get_query_res(base, token, function(queryRes) {
             console.log("Query complete!");
             console.log("");
             console.log("--sql query result--");
@@ -24,10 +24,10 @@ function get_response(email, pwd, res) {
     }
 
     var info_insert = function(callback) {
-        var table = "survey_admin_system";
+        var base = "survey_admin_system";
         var token = "insert into user_info (id, keyword) values ('" + email + "', '" + pwd + "')";
 
-        sql.get_query_res(table, token, function(queryRes) {
+        sql.get_query_res(base, token, function(queryRes) {
             console.log("Insertion complete!");
             console.log("");
             callback(null, null);
