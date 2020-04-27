@@ -8,7 +8,7 @@ window.onload = function() {
         if (userName != undefined) {
             console.log("--website cookie--");
             console.log("'user_name': " + userName);
-            $(location).attr("href", "http://127.0.0.1:8080/index.html");
+            $(location).attr("href", "http://127.0.0.1:8080/home.html");
         }
     }
 }
@@ -242,7 +242,7 @@ $(document).ready(function() {
                     console.log("--nodejs response from web server--");
                     if (data == 0) {
                         set_cookie("user_name", $("#login-email").val(), 3, "/");
-                        $(location).attr("href", "http://127.0.0.1:8080/index.html");
+                        $(location).attr("href", "http://127.0.0.1:8080/home.html");
                     }
                     else if (data == 1) {
                         console.log("'error code': " + data);
