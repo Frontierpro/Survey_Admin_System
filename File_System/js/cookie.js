@@ -1,13 +1,13 @@
 function set_cookie(cookieName, cookieValue, expireDuration, cookiePath) {
     var date = new Date();
     date.setTime(date.getTime() + (expireDuration * 24 * 60 * 60 * 1000));
-    var expire_cookie = "expires="+ date.toGMTString();
+    var cookieExpire = "expires="+ date.toGMTString();
     if (cookiePath) {
-        var path_cookie = "path=" + cookiePath;
-        document.cookie = cookieName + "=" + cookieValue + "; " + expire_cookie + "; " + path_cookie + ";";
+        var pathCookie = "path=" + cookiePath;
+        document.cookie = cookieName + "=" + cookieValue + "; " + cookieExpire + "; " + pathCookie + ";";
     }
     else
-        document.cookie = cookieName + "=" + cookieValue + "; " + expire_cookie + ";";
+        document.cookie = cookieName + "=" + cookieValue + "; " + cookieExpire + ";";
 }
 
 function get_cookie(cookieName) {
