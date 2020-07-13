@@ -1,0 +1,81 @@
+body {
+    margin: 0;
+    background-color: #eff4f7;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 4%;
+    border: 0.3px dashed #000000;
+    float: left;
+    width: 92%;
+}
+
+h1 {
+    text-align: center;
+    margin-top: 0;
+}
+
+.container {
+    background-color: white;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "宋体";
+    padding-top: 50px;
+    padding-bottom: 40px;
+    font-size: 15px;
+    float: left;
+}
+
+.unit-container {
+    float: left;
+    margin-left: 5%;
+    width: 95%;
+    margin-bottom: 10px;
+}
+
+.unit-num {
+    margin-left: 5px;
+    width: 32px;
+    float: left;
+}
+
+.unit-title {
+    width: 90%;
+    padding-top: 0.5px;
+}
+
+.unit-option {
+    float: left;
+    margin-left: 37px;
+}
+
+.option-text {
+    margin-left: 8%;
+    padding-top: 1px;
+    width: 82%;
+}
+
+.unit-err {
+    font-size: 10px;
+    color: coral;
+    float: left;
+    margin-left: 5px;
+    width: 60%;
+}
+
+.unit-text {
+    float: left;
+    margin-left: 5%;
+    width: 83%;
+    resize: none;
+}
+
+.form-btn {
+    width: 80%;
+    margin-left: 10%;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
