@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title></title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+<link rel="icon" type="image/x-icon" href="icon.png" />
+<link rel="stylesheet" href="edit.css" />
+
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="edit.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="unit-container">
+    <div class="unit-content">
+        <p class="unit-num">1. 请填写该问卷的标题(不得超过40字)</p>
+        <input class="unit-text" type="text" id="form-title"></input>
+        <p class="err-info" id="form-title-err"></p>
+        <p class="unit-num">2. 请选择是否需要获取回答者的用户ID</p>
+        <select class="unit-select" id="form-select">
+            <option value="true">是</option>
+            <option value="false">否</option>
+        </select>
+    </div>
+    </div>
+
+    <hr />
+
+    <div class="unit-container" id="container-0" style="display: none;">
+    <div class="unit-content">
+        <p class="unit-num" id="unit-num">1</p>
+        <p class="unit-title" id="unit-title">. 请在文本框中填写题目(不得超过1000字)</p>
+        <p class="unit-delete" id="unit-delete">×</p>
+        <textarea class="unit-text" id="unit-text"></textarea>
+        <p class="err-info" id="unit-text-err"></p>
+        <div class="unit-option" id="option-0" style="display: none;">
+            <p class="unit-num" id="option-num">A</p>
+            <p class="unit-title" id="option-title">. 请在文本框中填写选项内容(不得超过1000字)</p>
+            <p class="unit-delete" id="option-delete">×</p>
+            <textarea class="unit-text" id="option-text"></textarea>
+            <p class="err-info" id="option-text-err"></p>
+        </div>
+        <input type="button" class="unit-btn" id="unit-btn" value="点击添加选项" style="display: none;" />
+        <p class="unit-num">-- 请选择题型 --</p>
+        <select class="unit-select" id="unit-type">
+            <option value="0">单行文本题</option>
+            <option value="1">多行文本题</option>
+            <option value="2">单项选择题</option>
+            <option value="3">多项选择题</option>
+        </select>
+        <p class="unit-num">-- 请选择前置题目 --</p>
+        <select class="unit-select" id="pre-unit">
+            <option value="0">无</option>
+        </select>
+        <p class="unit-num">-- 请选择前置题目选项 --</p>
+        <select class="unit-select" id="pre-option">
+            <option value="0">无</option>
+        </select>
+    </div>
+    </div>
+
+    <div class="unit-container" id="add-model">
+        <div class="unit-content" id="unit-insert" style="padding: 0; margin-bottom: 10px;">
+            <p class="unit-add">+</p>
+        </div>
+        <input type="button" class="unit-btn" id="form-btn" value="点击创建问卷" />
+    </div>
+
+</div>
+
+</body>
+
+</html> 
