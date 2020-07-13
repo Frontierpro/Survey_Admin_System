@@ -1,0 +1,225 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.head {
+    position: fixed;
+    z-index: 3;
+    background: url("bkg.jpg") no-repeat;
+    background-size: cover;
+}
+
+.dummy-head {
+    position: fixed;
+    background-color: transparent;
+    transition: all 0.3s linear;
+    -webkit-transition: all 0.3s linear;
+    -o-transition: all 0.3s linear;
+    -moz-transition: all 0.3s linear;
+}
+
+.head-icon {
+    float: left;
+}
+
+.head-title {
+    margin: 0;
+    color: white;
+    float: left;
+    font-family: "microsoft yahei";
+}
+
+.head-link {
+    margin: 0;
+    float: left;
+    text-decoration: none;
+    color: white;
+    font-family: "microsoft yahei";
+}
+
+.head-sym {
+    margin: 0;
+    float: left;
+    color: white;
+    font-family: "microsoft yahei";
+}
+
+.content {
+    background: url("bkg.jpg") no-repeat;
+    background-size: cover;
+    width: 100%;
+}
+
+.content-mask {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    animation: content-mask-animation 2s;
+    -webkit-animation: content-mask-animation 2s;
+}
+
+@keyframes content-mask-animation {
+    from {background-color: transparent; width: 0;}
+    to {background-color: rgba(0, 0, 0, 0.6); width: 100%;}
+}
+
+@-webkit-keyframes content-mask-animation {
+    from {background-color: transparent; width: 0;}
+    to {background-color: rgba(0, 0, 0, 0.6); width: 100%;}
+}
+
+.content-title {
+    position: absolute;
+    z-index: 2;
+    color: white;
+    font-family: "microsoft yahei";
+    width: 100%;
+    text-align: center;
+    animation: content-title-animation 2s;
+    -webkit-animation: content-title-animation 2s;
+}
+
+@keyframes content-title-animation {
+    from {color: transparent;}
+    to {color: white;}
+}
+
+@-webkit-keyframes content-title-animation {
+    from {color: transparent;}
+    to {color: white;}
+}
+
+.content-text {
+    position: absolute;
+    z-index: 2;
+    color: coral;
+    font-family: "microsoft yahei";
+    width: 100%;
+    margin: 0;
+    text-align: center;
+    animation: content-text-animation 2s;
+    -webkit-animation: content-text-animation 2s;
+}
+
+@keyframes content-text-animation {
+    from {color: transparent;}
+    to {color: coral;}
+}
+
+@-webkit-keyframes content-text-animation {
+    from {color: transparent;}
+    to {color: coral;}
+}
+
+.sample {
+    background-color: #eeeeee;
+    width: 100%;
+}
+
+.img-container {
+    width: 15%;
+    height: 50%;
+    float: left;
+    background-color: white;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-radius: 10px;
+}
+
+.text-container {
+    width: 78%;
+    height: 15%;
+    float: left;
+    background-color: white;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-radius: 10px;
+    font-family: "microsoft yahei";
+    color: steelblue;
+}
+
+.sample-text {
+    text-align: center;
+    float: left;
+    width: 16.6%;
+}
+
+.dummy-text {
+    float: left;
+    width: 8.5%;
+}
+
+.container {
+    width: 100%;
+    background-color: #eff4f7;
+}
+
+.intro-bkg {
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+}
+
+.bkg-frame {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-table {
+    position: absolute;
+    width: 100%;
+    z-index: 2;
+    background-color: transparent;
+}
+
+.intro-logo {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-text {
+    width: 100%;
+    height: 100%;
+}
+
+.intro-title {
+    float: left;
+    margin: 0;
+    font-family: "microsoft yahei";
+}
+
+#title-one {
+    color: coral;
+}
+
+#title-two {
+    color: cornflowerblue;
+}
+
+#title-three {
+    color: yellowgreen;
+}
+
+.step-text {
+    padding: 0;
+    float: left;
+}
+
+.intro-step {
+    padding: 0;
+    color: #666666;
+    font-family: "microsoft yahei";
+}
+
+.foot {
+    background-color: #666666;
+}
+
+.foot-text {
+    width: 100%;
+    float: left;
+    color: cornflowerblue;
+    font-family: "microsoft yahei";
+    padding: 0;
+    text-align: center;
+}
