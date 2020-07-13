@@ -1,0 +1,151 @@
+body {
+    margin: 0;
+    background-color: #eff4f7;
+}
+
+input {
+    color: white;
+    float: right;
+    line-height: 20px;
+    margin-right: 4%;
+    margin-top: 18px;
+    width: 70px;
+    font-size: 13px;
+    border: 0;
+    border-radius: 5px;
+}
+
+#form-share {
+    background-color: yellowgreen;
+}
+
+#form-res {
+    background-color: cornflowerblue;
+}
+
+#form-delete {
+    background-color: coral;
+}
+
+.head {
+    position: fixed;
+    background-color: white;
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    transition: margin-top 0.3s linear;
+    -webkit-transition: margin-top 0.3s linear;
+    -o-transition: margin-top 0.3s linear;
+    -moz-transition: margin-top 0.3s linear;
+}
+
+.head-icon {
+    float: left;
+    width: 32px;
+    height: 32px;
+    margin-top: 18px;
+}
+
+.head-title {
+    margin: 0;
+    color: cornflowerblue;
+    float: left;
+    font-family: "microsoft yahei";
+    font-size: 22px;
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+.quit-text {
+    margin-top: 26.5px;
+    float: right;
+    color: #666666;
+    font-family: "microsoft yahei";
+    font-size: 16px;
+    margin-right: 2px;
+}
+
+.quit-icon {
+    float: right;
+    width: 18px;
+    height: 18px;
+    margin-top: 28.8px;
+}
+
+.dummy-head {
+    width: 100%;
+    height: 70px;
+}
+
+.content {
+    background-color: #eff4f7;
+    width: 100%;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    height: 100%;
+    width: 100%;
+}
+
+.content-button {
+    background-color: white;
+    float: left;
+    width: 90%;
+    border: 0;
+    margin-top: 10px;
+    font-family: "microsoft yahei";
+    text-align: center;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-radius: 10px;
+    padding: 0;
+    color: cornflowerblue;
+    height: 40px;
+    padding-top: 15px;
+    font-size: 18px;
+}
+
+.form-container {
+    background-color: white;
+    float: left;
+    margin-left: 5%;
+    margin-top: 10px;
+    width: 90%;
+    border: 0;
+    font-family: "microsoft yahei";
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    border-radius: 10px;
+    padding: 0;
+    color: cornflowerblue;
+    height: 55px;
+}
+
+#form-title {
+    color: cornflowerblue;
+    float: left;
+    margin-left: 3%;
+    margin-top: 16px;
+    margin-bottom: 0;
+    width: 30%;
+    font-size: 18px;
+}
+
+.foot {
+    background-color: #666666;
+    width: 100%;
+    height: 60px;
+}
+
+.foot-text {
+    float: left;
+    width: 100%;
+    height: 40px;
+    padding-top: 20px;
+    font-size: 16px;
+    text-align: center;
+    color: white;
+    font-family: "microsoft yahei";
+    margin: 0;
+}
