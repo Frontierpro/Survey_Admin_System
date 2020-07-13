@@ -1,0 +1,114 @@
+body {
+    margin: 0;
+    background-color: #eff4f7;
+}
+
+hr {
+    margin-top: 20px;
+    margin-bottom: 30px;
+    margin-left: 4%;
+    border: 0.3px dashed #000000;
+    float: left;
+    width: 92%;
+}
+
+.container {
+    background-color: white;
+    box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: "宋体";
+    padding-top: 50px;
+    padding-bottom: 40px;
+    font-size: 15px;
+    float: left;
+}
+
+.unit-container {
+    width: 87%;
+    margin-left: 5%;
+    margin-bottom: 10px;
+    border: 0.5px dashed black;
+    float: left;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 3%;
+}
+
+.unit-content {
+    width: 96.5%;
+    float: left;
+    border: 0.5px solid #888888;
+    color: black;
+    font-size: 12px;
+    padding-top: 10px;
+}
+
+.unit-num {
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 5%;
+    float: left;
+    height: 12px;
+}
+
+.unit-title {
+    margin-top: 0;
+    margin-bottom: 10px;
+    float: left;
+    height: 12px;
+}
+
+.unit-delete {
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-right: 4.5%;
+    height: 12px;
+    float: right;
+    border: 0.5px solid #888888;
+}
+
+.unit-select {
+    margin-bottom: 10px;
+    margin-left: 5%;
+    font-size: 12px;
+    width: 91%;
+    float: left;
+}
+
+.unit-text {
+    margin-left: 5%;
+    margin-bottom: 10px;
+    width: 90%;
+    float: left;
+    resize: none;
+}
+
+.unit-btn {
+    margin-bottom: 10px;
+    margin-left: 5%;
+    font-size: 12px;
+    width: 91%;
+    float: left;
+}
+
+.unit-add {
+    text-align: center;
+    font-size: 30px;
+    margin: 0;
+    color: #888888;
+}
+
+.err-info {
+    color: coral;
+    font-size: 10px;
+    float: left;
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 0;
+}
+
+#form-btn {
+    width: 96.5%; 
+    margin: 0;
+}
