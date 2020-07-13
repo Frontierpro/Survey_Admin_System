@@ -242,7 +242,13 @@ $(document).ready(function() {
                     console.log("--nodejs response from web server--");
                     if (data == 0) {
                         set_cookie("user_name", $("#login-email").val(), 3, "/");
-                        $(location).attr("href", "http://127.0.0.1:8080/home.html");
+                        if (get_cookie("edit_log") == undefined)
+                            $(location).attr("href", "http://127.0.0.1:8080/home.html");
+                        else {
+                            locationHref = get_cookie("edit_log");
+                            clear_cookie("edit_log", "/");
+                            $(location).attr("href", locationHref);
+                        }
                     }
                     else if (data == 1) {
                         console.log("'error code': " + data);
