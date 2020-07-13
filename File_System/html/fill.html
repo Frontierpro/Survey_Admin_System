@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<title></title>
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+<link rel="icon" type="image/x-icon" href="icon.png" />
+<link rel="stylesheet" href="survey.css" />
+
+<script type="text/javascript" src="https://cdn.staticfile.org/jquery/3.4.0/jquery.min.js"></script>
+<script type="text/javascript" src="fill.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<script type="text/javascript" src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h1><b id="form-title"></b></h1>
+
+    <div class="unit-container" id="single-choice-0" style="display: none;">
+        <p class="unit-num"></p>
+        <p class="unit-title"></p>
+        <input type="radio" class="unit-option" id="option-0" name="0" value="0" style="display: none;" />
+        <p class="option-text" id="option-text-0" style="display: none;"></p>
+        <p class="unit-err"></p>
+    </div>
+
+    <div class="unit-container" id="multi-choice-0" style="display: none;">
+        <p class="unit-num"></p>
+        <p class="unit-title"></p>
+        <input type="checkbox" class="unit-option" id="option-0" name="0" value="0" style="display: none;" />
+        <p class="option-text" id="option-text-0" style="display: none;"></p>
+        <p class="unit-err"></p>
+    </div>
+
+    <div class="unit-container" id="single-text-0" style="display: none;">
+        <p class="unit-num"></p>
+        <p class="unit-title"></p>
+        <input type="text" class="unit-text" />
+        <p class="unit-err"></p>
+    </div>
+
+    <div class="unit-container" id="multi-text-0" style="display: none;">
+        <p class="unit-num"></p>
+        <p class="unit-title"></p>
+        <textarea class="unit-text"></textarea>
+        <p class="unit-err"></p>
+    </div>
+
+    <hr id="form-begin" />
+
+    <hr id="form-end" />
+
+    <input type="button" class="form-btn" value="点击提交问卷" />
+
+</div>
+
+</body>
+
+</html> 
