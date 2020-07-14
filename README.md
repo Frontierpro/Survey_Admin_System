@@ -95,4 +95,4 @@ Then you can turn to the App_Server folder in the terminal and enter the follow 
 node server.js
 ```
 
-Turn to your browser, enter ```127.0.0.1:8080/index.html```. You come the the system index page.
+Turn to your browser, enter ```127.0.0.1:8080/index.html```. You come to the the system index page.
