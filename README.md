@@ -132,3 +132,141 @@ Finally, you can click on the check result button to check the results of a surv
 ![](Intro_Img/result.png)
 
 You can select which user's or visitor's answer you would like to check from the selection texture below the title.
+
+### Design Detail
+
+Generally, this system supports browsers on both PC and mobile. The size of page is able to adjust the ratio of the width and height of the browser automatically. Here I implement this function with changing series of standard size using original js.
+
+For the view layer, this system users some effects from Html5 and Css3, especially in the index page. I uses SVG, animations and transitions, and the header can change the background style between pure color and a picture with the changes of page's scrolling state.
+
+In this system, there is a very important regulation which called cookie management. When a user enter home page, edit page or result page, such pages need the user login information, the system will check cookies. So, there exists a cookie ```user_name``` to record which user is online on the current browser. The cookie setted when a user login on the local browser, the term of validity is three days. Note: this term is calculated from the time when the user log out. So, a core trigger is setted in the cookie manage system that it renew the ```user_name``` cookie info every ten minutes when the user is online.
+
+```
+$(document).ready(function() {
+    if (get_cookie("user_name") != undefined)
+        setInterval("renew_cookie()", 600000);
+})
+```
+
+Another regulation uses cookie is the page link jumping. For example, when a visitor gets a survey share link, while this survey requires the visitor's user ID. So, when he enter te fill page, the first thing the system does is checking the ```user_name``` cookie, it is ```undefined``` for a visitor. Then the system will jump to login page automatically to get the visitor's user info, and after that the system should jump back to this fill page location link. Generally, the system jump to home page after login completed. Here, the system uses a cookie called ```edit_log``` to record the jumping link, if the value of this cookie is undefined, or no jumping target exits, system will jump to the default location page. Abviously, the jumping target needs to pre-assign for this cookie before jumping.
+
+As for the above example, in fill page, system sets the value this cookie itself, then jump to login page.
+
+```
+if (form.ifID) {
+    userID = get_cookie("user_name");
+    if (userID != undefined) {
+        console.log("--user info--");
+        console.log("'user_id': " + userID);
+        renew_cookie();
+    }
+    else {
+        set_cookie("edit_log", window.location, 1 / 144,  "/");
+        alert("请先登录");
+        $(location).attr("href", "http://127.0.0.1:8080/login.html");
+    }
+}
+```
+
+While in login page, system firstly checks the location cookie, if no request exits, jump to the default target location, else, jump to the location recorded by the cookie.
+
+```
+if (get_cookie("edit_log") == undefined)
+    $(location).attr("href", "http://127.0.0.1:8080/home.html");
+else {
+    locationHref = get_cookie("edit_log");
+    clear_cookie("edit_log", "/");
+    $(location).attr("href", locationHref);
+}
+```
+
+As for the survey share link, the requirement is copy the url to the clipboard automatically. Here is the algorithm. Javascript supplies an API which can copy content from a entity to the system clipboard, we should use this API. So, firstly, we should create such an entity dynamically, then execute copy command and finally clear this entity to maintain the original static web page.
+
+```
+var tag = document.createElement('input');
+tag.setAttribute('id', 'cp_zdy_input');
+tag.value = shareAddr;
+document.getElementsByTagName('body')[0].appendChild(tag);
+document.getElementById('cp_zdy_input').select();
+document.execCommand('copy');
+document.getElementById('cp_zdy_input').remove();
+```
+
+In fact, the fill page and result page are templates. For each specific fill page and result page, the link are different. When system loads these pages, the first thing is parsing url, get the survey identity info from link and fetch the corresponding content from database to fill the initial blank survey.
+
+Above is about some techonologies in front-end, the back-end also have some difficulties.
+
+The most common problem is tasks synchronization. Because nodejs is asynchronous, many times the next task has been executed while the current task hasn't been completed. In this system, the server needs to response with database queries's results, so nodejs must wait until mysql query finished. The common regulation used in nodejs is callback. We can set a sql query task as a callback function. This method is effective but it also generates a problem, callback black hole. When a requests have many ordered sql querys one time, the above algorithom will generate amounts of callbacks as follows.
+
+```
+function(..., function(..., function(..., function(..., function(...) {
+    ...
+}) {
+    ...
+}) {
+    ...
+}) {
+    ...
+}) {
+    ...
+}
+```
+
+Such codes are really terrible. You can hardly understand each function and their relationships. So, here we introduce ```async``` key word. A task series can be written as follows.
+
+```
+var task_1 = function(..., callback) {
+    ...
+    callback()
+    ...
+}
+
+var task_2 = function(..., callback) {
+    ...
+    callback()
+    ...
+}
+
+var task_3 = function(..., callback) {
+    ...
+    callback()
+    ...
+}
+
+...
+
+async.series([task_1, task_2, task_3, ...], function(err, data) {
+    if (err)
+        ...
+    else
+        ...
+})
+```
+
+Notes: The first parameter is the list of tasks, the second parameter is the callback function used by each task. This method can not only solve tasks synchronization but also maintain a good code style.
+
+### Future Extension
+
+The UI design and the basic function of this system is already perfect. But the function is just basic and simple. The user center or say the home page can just implement creation and delete of surveys. And the result page can just display the original result of each ID or IP. So, here I have two ideas.
+
+\- Increasing Draft Function
+
+In edit page, user can choose whether publish the survey directly or save it as a draft. Drafts and published surveys have several differents.
+
+* The published surveys have share links while drafts don't. This means drafts cannot be filled or be seen by any other visitors.
+
+* Drafts can be modified and deleted while published surveys can just be deleted.
+
+* The published surveys have result pages while drafts don't.
+
+Note: The requirement description is simple but it means we must change the structure of the database. The most difficult thing is to determine how to redesign the database can make the least change to the original structure.
+
+\- Result Visualization
+
+The result display is too simple in this version. We can add data visualization techonology to the result. For example, the results of a selection problem can be represented by various echarts and texts can be rendered to word clouds.
+
+This amount of this work is less than the first task, but this work needs a detailed render plan.
+
+\- Survey Template Base
+
+We could consider pre-stored or initially input some standarded survey info into database as sample or templates. The way of creating surveys supports two methods. One is the current method, called creating based on zero. The other is creating based on templates. The edit page will initially filled with the template, than users can modify it and published. Just pay attention to the authority is ok.
