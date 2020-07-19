@@ -1,4 +1,4 @@
-# Survey_Admin_System
+# Survey Admin System
 
 This is a survey administration system implemented based on B/S architecture. It can complete creation, distribution, fill and delete of a survey. Any users or visitors can use it on the browser.
 
